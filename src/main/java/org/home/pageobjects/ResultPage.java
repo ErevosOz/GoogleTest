@@ -1,11 +1,10 @@
 package org.home.pageobjects;
 
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 
 public class ResultPage extends BaseClass {
 
-    //TODO user generic classes/interfaces - WebDriver instead of FirefoxDriver
-    public ResultPage(FirefoxDriver driver) {
+    public ResultPage(WebDriver driver) {
         super(driver);
     }
 }

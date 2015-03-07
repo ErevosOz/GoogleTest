@@ -1,20 +1,21 @@
 package org.home.pageobjects;
 
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 
 public class BaseClass {
-    //TODO user generic classes/interfaces - WebDriver instead of FirefoxDriver
-    protected FirefoxDriver driver;
-    private final String url = "https://www.google.com.ua";
+    protected WebDriver driver;
+    private static final String url = "https://www.google.com.ua";
 
-    //TODO user generic classes/interfaces - WebDriver instead of FirefoxDriver
-    public BaseClass(FirefoxDriver driver) {
+    public BaseClass(WebDriver driver) {
         this.driver = driver;
     }
 
-    //TODO name is misleading - navigatoToHomepage(), goToHomepage() etc
-    public HomePage getHomepage(){
+    public HomePage navigateToHomepage(){
         driver.get(url);
         return new HomePage(driver);
+    }
+
+    public static String getUrl() {
+        return url;
     }
 }
