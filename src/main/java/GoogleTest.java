@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
-
+//TODO create a package for tests, move this class there
 public class GoogleTest {
 
     private FirefoxDriver driver;

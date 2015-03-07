@@ -12,7 +12,7 @@ public class HomePage extends AbstractPage {
     public HomePage(FirefoxDriver driver) {
         super(driver);
     }
-
+    //TODO avoid using page factory, move out locators to a separate class
     @FindBy(xpath = ".//*[@id='hplogo']")
     private WebElement logo;
 
@@ -24,11 +24,12 @@ public class HomePage extends AbstractPage {
 
 
 
-
+    //TODO all asserts and verification must be in a test method in a test class, not hidden
     public void verifyLogoIsDisplayed() {
         Assert.assertTrue(logo.isDisplayed());
     }
 
+    //TODO use obvious naming - doSearchFor()
     public ResultPage searchTerm(String term){
         searchForm.sendKeys(term);
         searchButton.click();

@@ -16,6 +16,7 @@ public class ResultPage extends AbstractPage {
     @FindBy(xpath = "(.//*[@id='ires']//a)[1]")
     private WebElement firstLink;
 
+    //TODO all asserts and verification must be in a test method in a test class, not hidden
     public void verifyFirstLink(String term){
         Assert.assertTrue(firstLink.getText().contains(term));
 
