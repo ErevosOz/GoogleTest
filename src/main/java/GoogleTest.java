@@ -11,6 +11,8 @@ import java.util.concurrent.TimeUnit;
 public class GoogleTest {
 
     private FirefoxDriver driver;
+    //TODO use intuitive names - searchTerm ?
+    //TODO if there's no need to change the value, use final
     private String term = "Lorem Ipsum";
 
     @BeforeClass
@@ -27,7 +29,7 @@ public class GoogleTest {
 
     @Test
     public void test(){
-
+        //TODO use final on variables and objects to protect from changing value\reference
         HomePage home = new HomePage(driver);
         Reporter.log("Opened homepage");
         home.verifyLogoIsDisplayed();

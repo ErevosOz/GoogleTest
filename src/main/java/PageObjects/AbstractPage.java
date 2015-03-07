@@ -4,7 +4,7 @@ package PageObjects;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-
+// TODO class name is misleading because of abstract word, rename to BaseClass etc
 public class AbstractPage {
 
     protected FirefoxDriver driver;
