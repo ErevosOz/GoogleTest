@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class HomePage extends BaseClass {
-
+    //TODO user generic classes/interfaces - WebDriver instead of FirefoxDriver
     public HomePage(FirefoxDriver driver) {
         super(driver);
     }

@@ -16,9 +16,11 @@ public class GoogleTest {
 
     private FirefoxDriver driver;
     private final String searchTerm = "Lorem Ipsum";
+    //TODO you have a url in BaseClass, that is a duplication
     private final String url = "https://www.google.com.ua";
 
     @BeforeClass
+    //TODO code convention - methods must be lowercase
     public void Setup(){
         driver = new FirefoxDriver();
         driver.get(url);
@@ -27,6 +29,7 @@ public class GoogleTest {
     }
 
     @AfterClass
+    //TODO code convention - methods must be lowercase
     public void Teardown(){
         driver.quit();
     }
@@ -39,11 +42,13 @@ public class GoogleTest {
         Assert.assertTrue(driver.findElement(By.xpath(Locators.logo)).isDisplayed());
         Reporter.log("Logo is displayed");
 
+        //TODO rename object to something more intuitive
         final ResultPage result = homepage.doSearchFor(searchTerm);
         Reporter.log("Entered search term");
         Assert.assertTrue(driver.findElement(By.xpath(Locators.firstLink)).getText().contains(searchTerm));
         Reporter.log("First link contains search term");
 
+        //TODO rename object to something more intuitive - avoid using "object1", "object2" etc
         final HomePage homepage1  = result.getHomepage();
         Reporter.log("Returned to homepage");
         homepage1.hideLogo();
