@@ -6,8 +6,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BaseClass {
-    public HomePage(WebDriver driver) {
+
+    private static HomePage homePage;
+
+    private HomePage(WebDriver driver) {
         super(driver);
+    }
+
+    public synchronized static HomePage getHomePage(WebDriver driver){
+        if (homePage == null){
+            homePage = new HomePage(driver);
+        }
+        return homePage;
     }
 
     public ResultPage doSearchFor(String term){

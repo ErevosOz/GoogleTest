@@ -11,13 +11,15 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.*;
 import java.util.concurrent.TimeUnit;
+
 public class GoogleTest {
 
     private WebDriver driver;
-    private final String searchTerm = "Lorem Ipsum";
 
     @BeforeClass
     public void setup(){
@@ -31,10 +33,49 @@ public class GoogleTest {
         driver.quit();
     }
 
-    @Test
-    public void test(){
+    @DataProvider(name = "searchTerms")
+    public Object[][] searchTerms(){
+        final String searchDataFilePath = "src/searchData.txt";
+        File searchData = new File(searchDataFilePath);
+        String line;
+        int numOfLines = 0;
+        Object[][] data = null;
 
-        HomePage homePage = new HomePage(driver);
+        try (FileReader fileReader = new FileReader(searchData);
+             BufferedReader bufferedReader = new BufferedReader(fileReader)){
+
+            while ((line = bufferedReader.readLine()) != null){
+                if (!line.isEmpty()){
+                    numOfLines++;
+                }
+            }
+
+            data = new Object[numOfLines][1];
+            numOfLines = 0;
+
+            BufferedReader newBufferedReader = new BufferedReader(new FileReader(searchData));
+
+            while ((line = newBufferedReader.readLine()) != null){
+
+                if (line.isEmpty()){
+                    continue;
+                }
+
+                data[numOfLines][0] = line;
+                numOfLines++;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return data;
+    }
+
+    @Test(dataProvider = "searchTerms")
+    public void test(String searchTerm){
+
+        HomePage homePage = HomePage.getHomePage(driver);
         Reporter.log("Opened homepage");
         Assert.assertTrue(driver.findElement(By.id(Locators.logo)).isDisplayed());
         Reporter.log("Logo is displayed");
@@ -44,11 +85,12 @@ public class GoogleTest {
         Assert.assertTrue(driver.findElement(By.cssSelector(Locators.firstLink)).getText().contains(searchTerm));
         Reporter.log("First link contains search term");
 
-        homePage  = resultPage.navigateToHomepage();
+        homePage = resultPage.navigateToHomepage();
         Reporter.log("Returned to homepage");
         homePage.hideLogo();
         Assert.assertFalse(driver.findElement(By.id(Locators.logo)).isDisplayed());
         Reporter.log("Logo is hidden");
+        homePage.navigateToHomepage();
 
     }
 }
