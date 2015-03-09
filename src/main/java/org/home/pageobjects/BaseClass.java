@@ -12,7 +12,7 @@ public class BaseClass {
 
     public HomePage navigateToHomepage(){
         driver.get(url);
-        return HomePage.getHomePage(driver);
+        return HomePage.getHomepageInstance(driver);
     }
 
     public static String getUrl() {

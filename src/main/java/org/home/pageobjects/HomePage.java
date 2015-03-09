@@ -12,8 +12,7 @@ public class HomePage extends BaseClass {
     private HomePage(WebDriver driver) {
         super(driver);
     }
-    //TODO rename to getHomepageInstance() or similar
-    public synchronized static HomePage getHomePage(WebDriver driver){
+    public synchronized static HomePage getHomepageInstance(WebDriver driver){
         if (homePage == null){
             homePage = new HomePage(driver);
         }
