@@ -32,12 +32,14 @@ public class GoogleTest {
     public void teardown(){
         driver.quit();
     }
-
+    //TODO separate data provider and file reader methods, move file reader out to a separate class
     @DataProvider(name = "searchTerms")
     public Object[][] searchTerms(){
+        //TODO move data file to resources package
         final String searchDataFilePath = "src/searchData.txt";
         File searchData = new File(searchDataFilePath);
         String line;
+        //TODO linesCount?
         int numOfLines = 0;
         Object[][] data = null;
 
