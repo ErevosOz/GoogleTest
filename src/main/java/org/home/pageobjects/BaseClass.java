@@ -10,7 +10,7 @@ public class BaseClass {
         BaseClass.driver = driver;
     }
 
-    public HomePage navigateToHomepage(){
+    public HomePage navigateToHomepage() {
         driver.get(url);
         return HomePage.getHomepageInstance(driver);
     }

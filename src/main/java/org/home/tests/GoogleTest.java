@@ -23,18 +23,19 @@ public class GoogleTest {
     private WebDriver driver;
 
     @BeforeClass
-    public void setup(){
+    public void setup() {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driver.get(BaseClass.getUrl());
     }
 
     @AfterClass
-    public void teardown(){
+    public void teardown() {
         driver.quit();
     }
+
     @DataProvider(name = "searchTerms")
-    public Object[][] searchTerms(){
+    public Object[][] searchTerms() {
 
         final String searchDataFilePath = "src/main/java/org/home/resources/searchData.txt";
 
@@ -42,7 +43,7 @@ public class GoogleTest {
     }
 
     @Test(dataProvider = "searchTerms")
-    public void test(String searchTerm){
+    public void test(String searchTerm) {
 
         HomePage homePage = HomePage.getHomepageInstance(driver);
         Reporter.log("Opened homepage");
