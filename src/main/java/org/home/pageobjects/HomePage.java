@@ -12,14 +12,15 @@ public final class HomePage extends BaseClass {
     private HomePage(WebDriver driver) {
         super(driver);
     }
-    public synchronized static HomePage getHomepageInstance(WebDriver driver){
-        if (homePage == null){
+
+    public synchronized static HomePage getHomepageInstance(WebDriver driver) {
+        if (homePage == null) {
             homePage = new HomePage(driver);
         }
         return homePage;
     }
 
-    public ResultPage doSearchFor(String term){
+    public ResultPage doSearchFor(String term) {
         driver.findElement(By.id(Locators.searchForm)).sendKeys(term);
         driver.findElement(By.className(Locators.searchButton)).click();
         return new ResultPage(driver);

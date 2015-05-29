@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class DataFileReader {
 
-    public static Object[][] getSearchData(String searchDataFilePath){
+    public static Object[][] getSearchData(String searchDataFilePath) {
 
         File searchData = new File(searchDataFilePath);
         String line;
@@ -16,10 +16,10 @@ public class DataFileReader {
         Object[][] data = null;
 
         try (FileReader fileReader = new FileReader(searchData);
-             BufferedReader bufferedReader = new BufferedReader(fileReader)){
+             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
 
-            while ((line = bufferedReader.readLine()) != null){
-                if (!line.isEmpty()){
+            while ((line = bufferedReader.readLine()) != null) {
+                if (!line.isEmpty()) {
                     linesCount++;
                 }
             }
@@ -29,9 +29,9 @@ public class DataFileReader {
 
             BufferedReader newBufferedReader = new BufferedReader(new FileReader(searchData));
 
-            while ((line = newBufferedReader.readLine()) != null){
+            while ((line = newBufferedReader.readLine()) != null) {
 
-                if (line.isEmpty()){
+                if (line.isEmpty()) {
                     continue;
                 }
 
