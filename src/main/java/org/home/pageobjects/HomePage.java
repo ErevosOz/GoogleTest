@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends BaseClass {
+public final class HomePage extends BaseClass {
 
     private static HomePage homePage;
 
