@@ -170,7 +170,7 @@ To run OMS auto tests on other OS and browsers you need to perform following ste
   - Configure linux to autologin with no password;
   - In mysql grant access to oms database to the remote host user:
  ```
-  GRANT ALL ON oms.* TO oms@'%' IDENTIFIED BY '1qaz2wsx';
+  GRANT ALL ON oms.* TO user@'%' IDENTIFIED BY 'password';
  ```
 
 - Cofigure linux to shutdown without dialog window appearing. Edit `/etc/acpi/events/powerbtn` and replace `action=/etc/acpi/powerbtn.sh` with `action=/sbin/poweroff`;
@@ -190,7 +190,7 @@ java -jar /home/osboxes/Grid/selenium-server-standalone-2.45.0.jar -role node -h
 - On the virtual machine run `gpedit.msc`, go to **Computer Configuration\Windows Settings\Security Settings\Local Policies\Security Options\Accounts: Limit local account use of blank passwords to console logon only** and set it to **0**
 - In mysql grant access to oms database to the remote host user:
  ```
-  GRANT ALL ON oms.* TO oms@'%' IDENTIFIED BY '1qaz2wsx';
+  GRANT ALL ON oms.* TO user@'%' IDENTIFIED BY 'password';
  ```
 - Copy `start-node.bat`, `selenium-server-standalone-2.45.0.jar`, `chromedriver.exe`, `IEDriverServer.exe` from `/src/resources/drivers` and `/src/resources/scripts` to desired location on virtual machine (for example `C:\Grid`);
 - Edit `start-node.bat`, specify the path to grid server jar file, chromedriver,ie driver and configure the grid node settings:
