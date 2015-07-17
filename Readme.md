@@ -59,6 +59,7 @@ mvn test -D suite="suite name"
  - `MerchandiserOrderingPageTests`
  - `TabsNavigationTests`
  - `UserInfoPageTests`
+ - `LocalizationTests`
  - `AllTests`
  
 #####Example:
