@@ -94,7 +94,7 @@ mvn test -D selenium-java.version=2.55.0
  By default, without specifying any properties, maven runs the project with default libraries versions.
  
 ####Running on different browsers
- OMS auto tests supports execution on different browsers. To specifiy the desired broswer configure `browser` property int the `config.properties` file in `/src/resources/`
+ OMS auto tests supports execution on different browsers. To specifiy the desired browser configure `browser` property int the `config.properties` file in `/src/resources/`
  
  ```
 oms.url = http://localhost:8080/OMS
@@ -111,6 +111,8 @@ hub.url = http://localhost:4444/wd/hub
  - `internet_explorer`;
  - `phantom_js`;
  - `headless`;
+
+When running the project on Linux, in `/src/resources/drivers/` edit permissions for `chromedriver` and `phantomjs`, enable **Allow executing file as program**.
 
 
 ####Running with JAR
