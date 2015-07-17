@@ -48,7 +48,7 @@ mvn test
 ```
 
 #####Test suites
-You can run OMS auto test with specified test suites using the follofing command:
+You can run OMS auto test with specified test suites using the following command:
 ```
 mvn test -D suite="suite name"
 ```
