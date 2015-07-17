@@ -107,11 +107,11 @@ remote.browser.version = 38
 hub.url = http://localhost:4444/wd/hub
  ```
  **Supported browser properties:**
- - `firefox`;
- - `chrome`;
- - `internet_explorer`;
- - `phantom_js`;
- - `headless`;
+ - `firefox`
+ - `chrome`
+ - `internet_explorer`
+ - `phantom_js`
+ - `headless`
 
 When running the project on Linux, in `/src/resources/drivers/` edit permissions for `chromedriver` and `phantomjs`, enable **Allow executing file as program**.
 
