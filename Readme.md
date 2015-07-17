@@ -171,8 +171,7 @@ To run OMS auto tests on other OS and browsers you need to perform following ste
   - In mysql grant access to oms database to the remote host user:
  ```
   GRANT ALL ON oms.* TO user@'%' IDENTIFIED BY 'password';
- ```
-
+  ```
 - Cofigure linux to shutdown without dialog window appearing. Edit `/etc/acpi/events/powerbtn` and replace `action=/etc/acpi/powerbtn.sh` with `action=/sbin/poweroff`;
 - Copy `start-node.sh`, `selenium-server-standalone-2.45.0.jar`, `chromedriver` from `/src/resources/drivers` and `/src/resources/scripts` to desired location on virtual machine (for example `/home/osboxes/grid/`);
 - Edit `start-node.sh` permissions, enable **Allow executing file as program**; 
