@@ -151,7 +151,7 @@ java -jar `file_name.jar` `suite name`
 ```
 java -jar oms_auto_tests.jar administration
 ```  
-By default executing the JAR file will run all tests suite.
+By default, executing the JAR file will run all tests suite.
 
 
 <br\>
