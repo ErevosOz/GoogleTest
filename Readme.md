@@ -112,6 +112,45 @@ hub.url = http://localhost:4444/wd/hub
  - `phantom_js`;
  - `headless`;
 
+
+####Running with JAR
+You can run OMS auto tests using comipled JAR file:
+
+To run using JAR file:
+ - Create a JAR file with OMS auto tests project
+ - Use the following command in command line:
+```
+java -jar `file_name.jar`
+```
+
+#####Example:
+<br\>
+```
+java -jar oms_auto_tests.jar
+```  
+
+To run OMS auto tests using a JAR file with specific suite, execute the following command:
+```
+java -jar `file_name.jar` `suite name`
+```
+**Avaiable suites properties:**
+ - `administration`
+ - `item_management`
+ - `login`
+ - `ordering`
+ - `navigation` 
+ - `user_info`
+ - `localization`
+ - `all`
+
+#####Example:
+<br\>
+```
+java -jar oms_auto_tests.jar administration
+```  
+By default executing the JAR file will run all tests suite.
+
+
 <br\>
 ###Selenium Grid
 ###Overview
