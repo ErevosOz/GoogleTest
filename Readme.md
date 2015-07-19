@@ -136,7 +136,7 @@ To run OMS auto tests using a JAR file with specific suite, execute the followin
 ```
 java -jar `file_name.jar` `suite name`
 ```
-**Avaiable suites properties:**
+**Avaiable suite properties:**
  - `administration`
  - `item_management`
  - `login`
